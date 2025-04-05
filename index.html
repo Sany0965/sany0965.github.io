@@ -46,6 +46,13 @@
           <span>My GitHub</span>
         </a>
       </div>
+      <!-- Новая кнопка Donate -->
+      <div class="link-item">
+        <a href="#" id="donateButton">
+          <i class="fas fa-donate"></i>
+          <span>Donate</span>
+        </a>
+      </div>
       <div class="link-item">
         <a href="https://github.com/Sany0965/sany0965.github.io/archive/refs/heads/main.zip" 
            target="_blank" 
@@ -59,5 +66,29 @@
     <br>
     <p class="creator-info">This site was created by Worpli.All rights reserved. ❤️2025❤️</p>
   </div>
+
+  <!-- Модальное окно Donate -->
+  <div class="modal-overlay" id="donateModal">
+    <div class="modal">
+      <h2>Help the developer</h2>
+      <div class="modal-buttons">
+        <a href="https://yoomoney.ru/fundraise/19ABTK01SMQ.250330" target="_blank" rel="noopener noreferrer">YooMoney</a>
+        <a href="http://t.me/send?start=IVVhIaubY95z" target="_blank" rel="noopener noreferrer">Cryptobot</a>
+      </div>
+      <a href="#" class="close-modal" id="closeModal">Close</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('donateButton').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('donateModal').style.display = 'flex';
+    });
+
+    document.getElementById('closeModal').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('donateModal').style.display = 'none';
+    });
+  </script>
 </body>
 </html>
