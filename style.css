@@ -180,6 +180,16 @@ body {
   min-width: 30px;
 }
 
+.creator-info {
+  color: var(--matrix-green);
+  font-size: 1em;
+  margin-top: 20px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInSimple 0.5s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
 @keyframes glow {
   0% { box-shadow: 0 0 10px var(--matrix-green); }
   50% { box-shadow: 0 0 30px var(--matrix-green); }
