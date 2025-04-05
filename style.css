@@ -66,18 +66,10 @@ body {
   border: 2px solid var(--matrix-green);
   box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
   transition: var(--transition);
-  animation: autoRotate 2s linear infinite;
-  will-change: opacity;
 }
 
 .matrix-avatar:hover {
-  animation-play-state: paused;
   filter: brightness(1.2);
-}
-
-@keyframes autoRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 .matrix-text {
@@ -86,12 +78,6 @@ body {
   text-shadow: 0 0 12px var(--matrix-green);
   margin: 15px 0;
   letter-spacing: 4px;
-  animation: textGlow 1s ease-in-out infinite alternate;
-}
-
-@keyframes textGlow {
-  from { text-shadow: 0 0 10px var(--matrix-green); }
-  to { text-shadow: 0 0 20px var(--matrix-green), 0 0 40px var(--matrix-green); }
 }
 
 .emoji-separator {
