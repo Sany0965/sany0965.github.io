@@ -1,0 +1,201 @@
+:root {
+    --matrix-green: #0f0;
+    --bg-alpha: 0.15;
+    --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    overflow-x: hidden;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(0, 255, 0, 0.15), rgba(0, 255, 0, 0.1));
+    animation: matrixEffect 10s linear infinite;
+    -webkit-overflow-scrolling: touch;
+}
+
+.matrix-container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.avatar-container {
+    padding: 10px;
+    border: 2px solid var(--matrix-green);
+    border-radius: 50%;
+    display: inline-block;
+    animation: glow 2s ease-in-out infinite;
+    margin-bottom: 20px;
+}
+
+.matrix-avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 2px solid var(--matrix-green);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    transition: var(--transition);
+    animation: autoRotate 3s ease-in-out infinite;
+}
+
+.matrix-avatar:hover {
+    animation-play-state: paused;
+    filter: brightness(1.2);
+}
+
+@keyframes autoRotate {
+    0%, 70% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.matrix-text {
+    color: var(--matrix-green);
+    font-size: 2.2em;
+    text-shadow: 0 0 12px var(--matrix-green);
+    margin: 15px 0;
+    letter-spacing: 4px;
+    animation: textGlow 1.5s ease-in-out infinite alternate;
+}
+
+.emoji-separator {
+    color: var(--matrix-green);
+    font-size: 1.8em;
+    margin: 25px 0;
+    animation: pulse 2s infinite;
+}
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    animation: slideUp 1s ease-out 0.5s forwards;
+    opacity: 0;
+    margin-top: 25px;
+}
+
+.link-item a {
+    color: var(--matrix-green);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: var(--transition);
+    padding: 12px 25px;
+    border: 1px solid rgba(0, 255, 0, 0.4);
+    border-radius: 30px;
+    background: rgba(0, 20, 0, 0.2);
+}
+
+.link-item a:hover {
+    background: rgba(0, 255, 0, 0.15);
+    transform: scale(1.08);
+    box-shadow: 0 0 25px var(--matrix-green);
+}
+
+.link-item i {
+    font-size: 1.8em;
+    min-width: 30px;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 10px var(--matrix-green); }
+    50% { box-shadow: 0 0 30px var(--matrix-green); }
+    100% { box-shadow: 0 0 10px var(--matrix-green); }
+}
+
+@keyframes textGlow {
+    from { text-shadow: 0 0 10px var(--matrix-green); }
+    to { text-shadow: 0 0 20px var(--matrix-green), 0 0 40px var(--matrix-green); }
+}
+
+@keyframes matrixEffect {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 0% 100%; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; transform: scale(0.95); }
+    50% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 0.6; transform: scale(0.95); }
+}
+
+@media (max-width: 768px) {
+    .matrix-container {
+        padding: 20px;
+        width: 90%;
+    }
+    .matrix-avatar {
+        width: 140px;
+        height: 140px;
+    }
+    .matrix-text {
+        font-size: 1.8em;
+        letter-spacing: 2px;
+    }
+    .emoji-separator {
+        font-size: 1.3em;
+        margin: 15px 0;
+    }
+    .link-item a {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .matrix-container {
+        padding: 50px;
+    }
+    .matrix-avatar {
+        width: 220px;
+        height: 220px;
+    }
+    .matrix-text {
+        font-size: 2.5em;
+    }
+    .link-item a {
+        padding: 15px 30px;
+        font-size: 1.1em;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+    .matrix-container {
+        opacity: 1;
+    }
+    .links-container {
+        opacity: 1;
+    }
+}
