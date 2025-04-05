@@ -98,7 +98,6 @@ body {
     font-size: 1.8em;
     text-shadow: 0 0 10px var(--matrix-green);
     margin-bottom: 10px;
-    animation: pulse 1.5s infinite;
 }
 .project-list {
     list-style: none;
@@ -247,4 +246,4 @@ body {
     .projects-container {
         opacity: 1;
     }
-    }
+        }
