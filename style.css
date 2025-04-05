@@ -80,6 +80,18 @@ body {
   letter-spacing: 4px;
 }
 
+.verified-star {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-image: url('verified.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 4px;
+  vertical-align: top;
+  transform: translateY(-0.4em);
+}
+
 .emoji-separator {
   color: var(--matrix-green);
   font-size: 1.8em;
