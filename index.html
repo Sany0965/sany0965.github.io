@@ -13,9 +13,7 @@
     <div class="avatar-container">
       <img src="avatarka.jpg" alt="Worpli Avatar" class="matrix-avatar" loading="lazy">
     </div>
-    <h1 class="matrix-text">
-      Worpli Splash<sup class="verified-star"></sup>
-    </h1>
+    <h1 class="matrix-text" id="matrixText"></h1>
     <div class="emoji-separator" aria-hidden="true">| . --.- -.- . .-. . |</div>
     <div class="projects-container">
       <h2 class="projects-title">My projects:</h2>
@@ -46,7 +44,6 @@
           <span>My GitHub</span>
         </a>
       </div>
-      <!-- Новая кнопка Donate -->
       <div class="link-item">
         <a href="#" id="donateButton">
           <i class="fas fa-donate"></i>
@@ -54,9 +51,7 @@
         </a>
       </div>
       <div class="link-item">
-        <a href="https://github.com/Sany0965/sany0965.github.io/archive/refs/heads/main.zip" 
-           target="_blank" 
-           rel="noopener noreferrer">
+        <a href="https://github.com/Sany0965/sany0965.github.io/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">
           <i class="fas fa-download"></i>
           <span>Download the source code of this site</span>
         </a>
@@ -67,7 +62,6 @@
     <p class="creator-info">This site was created by Worpli.All rights reserved. ❤️2025❤️</p>
   </div>
 
-  <!-- Модальное окно Donate -->
   <div class="modal-overlay" id="donateModal">
     <div class="modal">
       <h2>Help the developer</h2>
@@ -80,11 +74,55 @@
   </div>
 
   <script>
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function animateDecryption() {
+      const finalText = 'Worpli Splash';
+      const nonSpaceCount = finalText.replace(/ /g, '').length;
+      const totalDuration = 5000;
+      const letterDuration = totalDuration / nonSpaceCount;
+      let displayText = '';
+      const targetElement = document.getElementById('matrixText');
+
+      for (let i = 0; i < finalText.length; i++) {
+        const targetChar = finalText[i];
+        if (targetChar === ' ') {
+          displayText += ' ';
+          targetElement.textContent = displayText;
+          continue;
+        }
+
+        let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+        if (targetChar === targetChar.toUpperCase()) {
+          alphabet = alphabet.toUpperCase();
+        }
+        const targetIndex = alphabet.indexOf(targetChar);
+        if (targetIndex === -1) {
+          displayText += targetChar;
+          targetElement.textContent = displayText;
+          continue;
+        }
+        const steps = targetIndex + 1;
+        const iterationDelay = letterDuration / steps;
+
+        for (let j = 0; j <= targetIndex; j++) {
+          const currentChar = alphabet[j];
+          targetElement.textContent = displayText + currentChar;
+          await sleep(iterationDelay);
+        }
+        displayText += targetChar;
+        targetElement.textContent = displayText;
+      }
+      targetElement.innerHTML = displayText + '<sup class="verified-star"><img src="verified.png" alt="verified"></sup>';
+    }
+
+    document.addEventListener('DOMContentLoaded', animateDecryption);
     document.getElementById('donateButton').addEventListener('click', function(e) {
       e.preventDefault();
       document.getElementById('donateModal').style.display = 'flex';
     });
-
     document.getElementById('closeModal').addEventListener('click', function(e) {
       e.preventDefault();
       document.getElementById('donateModal').style.display = 'none';

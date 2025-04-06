@@ -80,16 +80,18 @@ body {
   letter-spacing: 4px;
 }
 
+/* Изменения для размещения галочки в верхней части текста */
 .verified-star {
   display: inline-block;
+  position: relative;
+  top: -0.5em;
+  margin-left: 4px;
+}
+
+.verified-star img {
   width: 18px;
   height: 18px;
-  background-image: url('verified.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-left: 4px;
-  vertical-align: top;
-  transform: translateY(-0.4em);
+  vertical-align: middle;
 }
 
 .emoji-separator {
@@ -258,7 +260,6 @@ body {
     opacity: 1;
   }
 }
-
 
 .modal-overlay {
   position: fixed;
