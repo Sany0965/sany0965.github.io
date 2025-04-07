@@ -1,87 +1,140 @@
-<!DOCTYPE html>  <html lang="ru">  
-<head>  
-  <meta charset="UTF-8">  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">  
-  <title>Worpli Splash</title>  
-  <link rel="stylesheet" href="style.css">  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">  
-  <link rel="preload" href="avatarka.jpg" as="image">  
-</head>  
-<body>  
-  <div class="matrix-container">  
-    <div class="avatar-container">  
-      <img src="avatarka.jpg" alt="Worpli Avatar" class="matrix-avatar" loading="lazy">  
-    </div>  
-    <h1 class="matrix-text">  
-      Worpli Splash<sup class="verified-star"></sup>  
-    </h1>  
-    <div class="emoji-separator" aria-hidden="true">11010000 10100101 11010001 10000011 11010000 10111001</div>  
-    <div class="projects-container">  
-      <h2 class="projects-title">Download my popular projects:</h2>  
-      <ul class="project-list">  
-        <li class="project-item">🔹 <a href="https://github.com/Sany0965/TG_DumpPython/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">TG_DumpPython</a></li>  
-        <li class="project-item">🔹 <a href="https://github.com/Sany0965/Telegram_Donation_Bot/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">Telegram_Donation_Bot</a></li>  
-        <li class="project-item">🔹 <a href="https://github.com/Sany0965/telegram_sessionBot/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">Telegram_sessionBot</a></li>  
-        <li class="project-item">🔹 <a href="https://github.com/Sany0965/AutoSaleBot/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">AutoSaleBot</a></li>  
-      </ul>  
-      <p class="more-projects">See many other projects on GitHub.</p>  
-    </div>  
-    <div class="links-container">  
-      <div class="link-item">  
-        <a href="https://t.me/worpli" target="_blank" rel="noopener noreferrer">  
-          <i class="fab fa-telegram"></i>  
-          <span>My Telegram</span>  
-        </a>  
-      </div>  
-      <div class="link-item">  
-        <a href="https://t.me/worpliBIO" target="_blank" rel="noopener noreferrer">  
-          <i class="fab fa-telegram"></i>  
-          <span>My bio in telegram</span>  
-        </a>  
-      </div>  
-      <div class="link-item">  
-        <a href="https://github.com/Sany0965" target="_blank" rel="noopener noreferrer">  
-          <i class="fab fa-github"></i>  
-          <span>My GitHub</span>  
-        </a>  
-      </div>  
-      <!-- Новая кнопка Donate -->  
-      <div class="link-item">  
-        <a href="#" id="donateButton">  
-          <i class="fas fa-donate"></i>  
-          <span>Donate</span>  
-        </a>  
-      </div>  
-      <div class="link-item">  
-        <a href="https://github.com/Sany0965/sany0965.github.io/archive/refs/heads/main.zip"   
-           target="_blank"   
-           rel="noopener noreferrer">  
-          <i class="fas fa-download"></i>  
-          <span>Download the source code of this site</span>  
-        </a>  
-      </div>  
-    </div>  
-    <br>  
-    <br>  
-    <p class="creator-info">This site was created by Worpli.All rights reserved. ❤️2025❤️</p>  
-  </div>    <!-- Модальное окно Donate -->    <div class="modal-overlay" id="donateModal">  
-    <div class="modal">  
-      <h2>Help the developer</h2>  
-      <div class="modal-buttons">  
-        <a href="https://yoomoney.ru/fundraise/19ABTK01SMQ.250330" target="_blank" rel="noopener noreferrer">YooMoney</a>  
-        <a href="http://t.me/send?start=IVVhIaubY95z" target="_blank" rel="noopener noreferrer">Cryptobot</a>  
-      </div>  
-      <a href="#" class="close-modal" id="closeModal">Close</a>  
-    </div>  
-  </div>    <script>  
-    document.getElementById('donateButton').addEventListener('click', function(e) {  
-      e.preventDefault();  
-      document.getElementById('donateModal').style.display = 'flex';  
-    });  
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Worpli Splash</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preload" href="avatarka.jpg" as="image">
+</head>
+<body>
+  <div class="matrix-container">
+    <div class="avatar-container">
+      <img src="avatarka.jpg" alt="Worpli Avatar" class="matrix-avatar" loading="lazy">
+    </div>
+    
+    <h1 class="matrix-text">
+      Worpli Splash<sup class="verified-star"></sup>
+    </h1>
+    
+    <div class="emoji-separator" aria-hidden="true">11010000 10100101 11010001 10000011 11010000 10111001</div>
+    
+    <div class="projects-container">
+      <h2 class="projects-title">Download my popular projects:</h2>
+      <ul class="project-list">
+        <li class="project-item">🔹 <a href="https://github.com/Sany0965/TG_DumpPython/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">TG_DumpPython</a></li>
+        <li class="project-item">🔹 <a href="https://github.com/Sany0965/Telegram_Donation_Bot/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">Telegram_Donation_Bot</a></li>
+        <li class="project-item">🔹 <a href="https://github.com/Sany0965/telegram_sessionBot/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">Telegram_sessionBot</a></li>
+        <li class="project-item">🔹 <a href="https://github.com/Sany0965/AutoSaleBot/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">AutoSaleBot</a></li>
+      </ul>
+      <p class="more-projects">See many other projects on GitHub.</p>
+    </div>
+
+    <div class="links-container">
+      <div class="link-item">
+        <a href="https://t.me/worpli" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-telegram"></i>
+          <span>My Telegram</span>
+        </a>
+      </div>
+      <div class="link-item">
+        <a href="https://t.me/worpliBIO" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-telegram"></i>
+          <span>My bio in telegram</span>
+        </a>
+      </div>
+      <div class="link-item">
+        <a href="https://github.com/Sany0965" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+          <span>My GitHub</span>
+        </a>
+      </div>
+      <div class="link-item">
+        <a href="#" id="donateButton">
+          <i class="fas fa-donate"></i>
+          <span>Donate</span>
+        </a>
+      </div>
+      <div class="link-item">
+        <a href="https://github.com/Sany0965/sany0965.github.io/archive/refs/heads/main.zip" 
+           target="_blank" 
+           rel="noopener noreferrer">
+          <i class="fas fa-download"></i>
+          <span>Download the source code of this site</span>
+        </a>
+      </div>
+    </div>
+
+    <p class="creator-info">This site was created by Worpli.All rights reserved. ❤️2025❤️</p>
+
+    
+    <div class="canvas">
+      <div class="tree">
+        <div class="trunk">
+          <div class="branch">
+            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+            <div class="leaf"></div>
+          </div>
+          <div class="branch">
+            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+          </div>
+          <div class="branch">
+            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+          </div>
+          <div class="branch">
+            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+            <div class="leaf"></div><div class="leaf"></div>
+          </div>
+          <div class="branch">
+            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+            <div class="leaf"></div><div class="leaf"></div>
+          </div>
+          <div class="branch">
+            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+          </div>
+          <div class="branch">
+            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+          </div>
+          <div class="branch">
+            <div class="leaf"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   
-    document.getElementById('closeModal').addEventListener('click', function(e) {  
-      e.preventDefault();  
-      document.getElementById('donateModal').style.display = 'none';  
-    });  
-  </script>  </body>  
+  <div class="modal-overlay" id="donateModal">
+    <div class="modal">
+      <h2>Help the developer</h2>
+      <div class="modal-buttons">
+        <a href="https://yoomoney.ru/fundraise/19ABTK01SMQ.250330" target="_blank" rel="noopener noreferrer">YooMoney</a>
+        <a href="http://t.me/send?start=IVVhIaubY95z" target="_blank" rel="noopener noreferrer">Cryptobot</a>
+      </div>
+      <a href="#" class="close-modal" id="closeModal">Close</a>
+    </div>
+  </div>
+
+  <script>
+    
+    document.getElementById('donateButton').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('donateModal').style.display = 'flex';
+    });
+
+    document.getElementById('closeModal').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('donateModal').style.display = 'none';
+    });
+
+    
+    window.addEventListener('load', () => {
+      document.querySelector('.canvas').style.opacity = '1';
+    });
+  </script>
+</body>
 </html>

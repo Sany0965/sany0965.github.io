@@ -321,3 +321,93 @@ transition: var(--transition);
 text-decoration: underline;
 }
 
+
+.canvas {
+  position: relative;
+  z-index: 0;
+  height: 300px;
+  margin: -30px auto 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.tree {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.trunk, .branch {
+  border-radius: 25px;
+  background: linear-gradient(to right, #0a290a, #041704);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+}
+
+.trunk {
+  position: relative;
+  width: 8px;
+  height: 220px;
+  margin: 0 auto;
+}
+
+.branch {
+  position: absolute;
+  width: 5px;
+  transform-origin: bottom center;
+}
+
+.branch:nth-child(even) { transform: rotate(55deg); }
+.branch:nth-child(odd) { transform: rotate(-55deg); }
+
+/* Обновленные позиции веток после удаления нижней */
+.branch:nth-child(1) { top: 100px; height: 120px; }
+.branch:nth-child(2) { top: 80px; height: 110px; }
+.branch:nth-child(3) { top: 60px; height: 90px; }
+.branch:nth-child(4) { top: 40px; height: 80px; }
+.branch:nth-child(5) { top: 30px; height: 60px; }
+.branch:nth-child(6) { top: 15px; height: 50px; }
+.branch:nth-child(7) { top: 5px; height: 30px; }
+
+.leaf {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 70% 0 70% 0;
+  background: linear-gradient(to right, 
+    rgba(0, 255, 0, 0.7), 
+    rgba(0, 128, 0, 0.5));
+  box-shadow: 0 0 12px var(--matrix-green);
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes leaf-odd-grow {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+@keyframes leaf-even-grow {
+  0% { transform: rotate(-90deg) scale(0); opacity: 0; }
+  100% { transform: rotate(-90deg) scale(1); opacity: 0.8; }
+}
+
+.leaf:nth-child(odd) {
+  left: 100%;
+  transform-origin: 0% 100%;
+  animation: leaf-odd-grow 4s both;
+}
+
+.leaf:nth-child(even) {  
+  left: -150%;
+  transform-origin: 50% 100%;
+  animation: leaf-even-grow 4s both;
+}
+
+/* Позиции листьев */
+.leaf:nth-child(1) { top: 3px; animation-delay: 0.5s; }
+.leaf:nth-child(2) { top: 15px; animation-delay: 1s; }
+.leaf:nth-child(3) { top: 35px; animation-delay: 1.5s; }
+.leaf:nth-child(4) { top: 45px; animation-delay: 2s; }
+.leaf:nth-child(5) { top: 65px; animation-delay: 2.5s; }
+.leaf:nth-child(6) { top: 75px; animation-delay: 3s; }
+.leaf:nth-child(7) { top: 95px; animation-delay: 3.5s; }
