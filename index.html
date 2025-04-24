@@ -113,8 +113,8 @@
   <div class="modal-overlay" id="videoModal">
     <div class="modal">
       <div style="position: relative;">
-        <video id="player" preload="auto" crossorigin>
-          <source src="backrooms.mp4" type="video/mp4">
+        <video id="player" controls preload="auto">
+          <source src="./backrooms.mp4" type="video/mp4">
         </video>
         <div class="spinner" id="spinner"></div>
       </div>
@@ -130,13 +130,13 @@
   </div>
 
   <script>
+    const player          = document.getElementById('player');
+    const spinner         = document.getElementById('spinner');
     const donateButton    = document.getElementById('donateButton');
     const donateModal     = document.getElementById('donateModal');
     const closeModal      = document.getElementById('closeModal');
     const backroomsLink   = document.querySelector('.backrooms-link');
     const videoModal      = document.getElementById('videoModal');
-    const player          = document.getElementById('player');
-    const spinner         = document.getElementById('spinner');
     const playBtn         = document.getElementById('playPause');
     const progress        = document.getElementById('progress');
     const progressBar     = document.getElementById('progressBar');
@@ -155,18 +155,26 @@
     player.addEventListener('canplay',   () => spinner.style.display = 'none');
     player.addEventListener('waiting',   () => spinner.style.display = 'block');
     player.addEventListener('playing',   () => spinner.style.display = 'none');
-    player.addEventListener('error',     () => { spinner.style.display = 'none'; alert('Не удалось загрузить видео. Проверьте наличие файла backrooms.mp4 на сервере.'); });
+    player.addEventListener('error',     () => { spinner.style.display = 'none'; console.error('Video load error'); });
 
     donateButton.addEventListener('click', e => { e.preventDefault(); donateModal.style.display = 'flex'; });
     closeModal.addEventListener('click', e => { e.preventDefault(); donateModal.style.display = 'none'; });
 
     backroomsLink.addEventListener('click', e => {
-      e.preventDefault(); videoModal.style.display = 'flex'; player.currentTime = 0; player.play();
+      e.preventDefault();
+      videoModal.style.display = 'flex';
+      player.currentTime = 0;
+      player.play();
     });
 
     playBtn.addEventListener('click', () => {
-      if (player.paused) { player.play(); playBtn.innerHTML = '<i class="fas fa-pause"></i>'; }
-      else               { player.pause(); playBtn.innerHTML = '<i class="fas fa-play"></i>'; }
+      if (player.paused) {
+        player.play();
+        playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+      } else {
+        player.pause();
+        playBtn.innerHTML = '<i class="fas fa-play"></i>';
+      }
     });
 
     player.addEventListener('timeupdate', () => {
@@ -183,18 +191,29 @@
     });
 
     volumeSlider.addEventListener('input', () => player.volume = volumeSlider.value);
+
     fsBtn.addEventListener('click', () => {
       if (!document.fullscreenElement) player.requestFullscreen();
       else document.exitFullscreen();
     });
 
-    closeVideoModal.addEventListener('click', e => { e.preventDefault(); player.pause(); videoModal.style.display = 'none'; });
+    closeVideoModal.addEventListener('click', e => {
+      e.preventDefault();
+      player.pause();
+      videoModal.style.display = 'none';
+    });
+
     window.addEventListener('click', e => {
       if (e.target === donateModal || e.target === videoModal) {
-        player.pause(); donateModal.style.display = 'none'; videoModal.style.display = 'none';
+        player.pause();
+        donateModal.style.display = 'none';
+        videoModal.style.display = 'none';
       }
     });
-    window.addEventListener('load', () => document.querySelector('.canvas').style.opacity = '1');
+
+    window.addEventListener('load', () => {
+      document.querySelector('.canvas').style.opacity = '1';
+    });
   </script>
 </body>
 </html>
