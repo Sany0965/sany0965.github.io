@@ -97,6 +97,7 @@
       </div>
     </div>
   </div>
+
   <div class="modal-overlay" id="donateModal">
     <div class="modal">
       <h2>Help the developer</h2>
@@ -107,6 +108,7 @@
       <a href="#" class="close-modal" id="closeModal">Close</a>
     </div>
   </div>
+
   <div class="modal-overlay" id="videoModal">
     <div class="modal">
       <video id="player" preload="metadata">
@@ -123,6 +125,7 @@
       </div>
     </div>
   </div>
+
   <script>
     const donateButton = document.getElementById('donateButton');
     const donateModal = document.getElementById('donateModal');
@@ -138,21 +141,27 @@
     const fsBtn = document.getElementById('fullscreen');
     const closeVideoModal = document.getElementById('closeVideoModal');
 
-    donateButton.addEventListener('click', function(e) {
+    const format = t => {
+      const mm = String(Math.floor(t / 60)).padStart(2, '0');
+      const ss = String(Math.floor(t % 60)).padStart(2, '0');
+      return `${mm}:${ss}`;
+    };
+
+    donateButton.addEventListener('click', e => {
       e.preventDefault();
       donateModal.style.display = 'flex';
     });
-    closeModal.addEventListener('click', function(e) {
+    closeModal.addEventListener('click', e => {
       e.preventDefault();
       donateModal.style.display = 'none';
     });
-    backroomsLink.addEventListener('click', function(e) {
+    backroomsLink.addEventListener('click', e => {
       e.preventDefault();
       videoModal.style.display = 'flex';
       player.currentTime = 0;
       player.play();
     });
-    playBtn.addEventListener('click', function() {
+    playBtn.addEventListener('click', () => {
       if (player.paused) {
         player.play();
         playBtn.innerHTML = '<i class="fas fa-pause"></i>';
@@ -161,40 +170,42 @@
         playBtn.innerHTML = '<i class="fas fa-play"></i>';
       }
     });
-    player.addEventListener('timeupdate', function() {
-      const percent = player.currentTime / player.duration * 100;
-      progressBar.style.width = percent + '%';
-      const format = t => String(Math.floor(t / 60)).padStart(2, '0') + ':' + String(Math.floor(t % 60)).padStart(2, '0');
-      timeDisplay.textContent = `${format(player.currentTime)} / ${format(player.duration)}`;
+    player.addEventListener('timeupdate', () => {
+      const dur = isNaN(player.duration) ? 0 : player.duration;
+      const pct = dur ? (player.currentTime / dur) * 100 : 0;
+      progressBar.style.width = pct + '%';
+      timeDisplay.textContent = `${format(player.currentTime)} / ${format(dur)}`;
     });
-    progress.addEventListener('click', function(e) {
+    progress.addEventListener('click', e => {
       const rect = progress.getBoundingClientRect();
       const pos = (e.pageX - rect.left) / rect.width;
-      player.currentTime = pos * player.duration;
+      if (!isNaN(player.duration)) {
+        player.currentTime = pos * player.duration;
+      }
     });
-    volumeSlider.addEventListener('input', function() {
+    volumeSlider.addEventListener('input', () => {
       player.volume = volumeSlider.value;
     });
-    fsBtn.addEventListener('click', function() {
+    fsBtn.addEventListener('click', () => {
       if (!document.fullscreenElement) {
         player.requestFullscreen();
       } else {
         document.exitFullscreen();
       }
     });
-    closeVideoModal.addEventListener('click', function(e) {
+    closeVideoModal.addEventListener('click', e => {
       e.preventDefault();
       player.pause();
       videoModal.style.display = 'none';
     });
-    window.addEventListener('click', function(e) {
+    window.addEventListener('click', e => {
       if (e.target === donateModal || e.target === videoModal) {
         player.pause();
         donateModal.style.display = 'none';
         videoModal.style.display = 'none';
       }
     });
-    window.addEventListener('load', function() {
+    window.addEventListener('load', () => {
       document.querySelector('.canvas').style.opacity = '1';
     });
   </script>
