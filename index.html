@@ -13,13 +13,11 @@
     <div class="avatar-container">
       <img src="avatarka.jpg" alt="Worpli Avatar" class="matrix-avatar" loading="lazy">
     </div>
-    
-    <h1 class="matrix-text">
-      Worpli Splash<sup class="verified-star"></sup>
-    </h1>
-    
-    <div class="emoji-separator" aria-hidden="true">I CAN'T STOP (A-🚄) I AM NOT dabbackwood</div>
-    
+    <h1 class="matrix-text">Worpli Splash<sup class="verified-star"></sup></h1>
+    <div class="emoji-separator" aria-hidden="true">
+      I CAN'T STOP (A-🚄) I AM NOT dabbackwood. 
+      <span class="backrooms-link">I'm stuck in Backrooms</span>
+    </div>
     <div class="projects-container">
       <h2 class="projects-title">Download my popular projects:</h2>
       <ul class="project-list">
@@ -30,79 +28,61 @@
       </ul>
       <p class="more-projects">See many other projects on GitHub.</p>
     </div>
-
     <div class="links-container">
       <div class="link-item">
         <a href="https://t.me/worpli" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-telegram"></i>
-          <span>My Telegram</span>
+          <i class="fab fa-telegram"></i><span>My Telegram</span>
         </a>
       </div>
       <div class="link-item">
         <a href="https://t.me/worpliBIO" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-telegram"></i>
-          <span>My bio in telegram</span>
+          <i class="fab fa-telegram"></i><span>My bio in telegram</span>
         </a>
       </div>
       <div class="link-item">
         <a href="https://github.com/Sany0965" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-github"></i>
-          <span>My GitHub</span>
+          <i class="fab fa-github"></i><span>My GitHub</span>
         </a>
       </div>
       <div class="link-item">
         <a href="#" id="donateButton">
-          <i class="fas fa-donate"></i>
-          <span>Donate</span>
+          <i class="fas fa-donate"></i><span>Donate</span>
         </a>
-       </div>
+      </div>
       <div class="link-item">
         <a href="https://sany0965.github.io/WRPL-Chat.github.io/" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-exchange-alt"></i>
-          <span>Online AI WRPL Chat</span>
+          <i class="fas fa-exchange-alt"></i><span>Online AI WRPL Chat</span>
         </a>
       </div>
       <div class="link-item">
         <a href="https://t.me/tictokphotourlBot" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-tiktok"></i>
-          <span>TikTok Photo Prank</span>
+          <i class="fab fa-tiktok"></i><span>TikTok Photo Prank</span>
         </a>
       </div>
       <div class="link-item">
-        <a href="https://github.com/Sany0965/sany0965.github.io/archive/refs/heads/main.zip" 
-           target="_blank" 
-           rel="noopener noreferrer">
-          <i class="fas fa-download"></i>
-          <span>Download the source code of this site</span>
+        <a href="https://github.com/Sany0965/sany0965.github.io/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-download"></i><span>Download the source code of this site</span>
         </a>
       </div>
     </div>
-
     <p class="creator-info">This site was created by Worpli. All rights reserved. ❤️2025❤️</p>
-
     <div class="canvas">
       <div class="tree">
         <div class="trunk">
           <div class="branch">
-            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
-            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
-            <div class="leaf"></div>
+            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
           </div>
           <div class="branch">
-            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
-            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
           </div>
           <div class="branch">
-            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
-            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
           </div>
           <div class="branch">
-            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
-            <div class="leaf"></div><div class="leaf"></div>
+            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
           </div>
           <div class="branch">
-            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
-            <div class="leaf"></div><div class="leaf"></div>
+            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
           </div>
           <div class="branch">
             <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
@@ -117,7 +97,6 @@
       </div>
     </div>
   </div>
-
   <div class="modal-overlay" id="donateModal">
     <div class="modal">
       <h2>Help the developer</h2>
@@ -128,19 +107,94 @@
       <a href="#" class="close-modal" id="closeModal">Close</a>
     </div>
   </div>
-
+  <div class="modal-overlay" id="videoModal">
+    <div class="modal">
+      <video id="player" preload="metadata">
+        <source src="backrooms.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+      </video>
+      <div class="custom-controls" id="controls">
+        <button id="playPause"><i class="fas fa-play"></i></button>
+        <div class="progress" id="progress"><div class="bar" id="progressBar"></div></div>
+        <span class="time" id="time">00:00 / 00:00</span>
+        <input type="range" id="volume" class="volume" min="0" max="1" step="0.05" value="1">
+        <button id="fullscreen"><i class="fas fa-expand"></i></button>
+        <button class="close-modal" id="closeVideoModal">✕</button>
+      </div>
+    </div>
+  </div>
   <script>
-    document.getElementById('donateButton').addEventListener('click', function(e) {
-      e.preventDefault();
-      document.getElementById('donateModal').style.display = 'flex';
-    });
+    const donateButton = document.getElementById('donateButton');
+    const donateModal = document.getElementById('donateModal');
+    const closeModal = document.getElementById('closeModal');
+    const backroomsLink = document.querySelector('.backrooms-link');
+    const videoModal = document.getElementById('videoModal');
+    const player = document.getElementById('player');
+    const playBtn = document.getElementById('playPause');
+    const progress = document.getElementById('progress');
+    const progressBar = document.getElementById('progressBar');
+    const timeDisplay = document.getElementById('time');
+    const volumeSlider = document.getElementById('volume');
+    const fsBtn = document.getElementById('fullscreen');
+    const closeVideoModal = document.getElementById('closeVideoModal');
 
-    document.getElementById('closeModal').addEventListener('click', function(e) {
+    donateButton.addEventListener('click', function(e) {
       e.preventDefault();
-      document.getElementById('donateModal').style.display = 'none';
+      donateModal.style.display = 'flex';
     });
-
-    window.addEventListener('load', () => {
+    closeModal.addEventListener('click', function(e) {
+      e.preventDefault();
+      donateModal.style.display = 'none';
+    });
+    backroomsLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      videoModal.style.display = 'flex';
+      player.currentTime = 0;
+      player.play();
+    });
+    playBtn.addEventListener('click', function() {
+      if (player.paused) {
+        player.play();
+        playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+      } else {
+        player.pause();
+        playBtn.innerHTML = '<i class="fas fa-play"></i>';
+      }
+    });
+    player.addEventListener('timeupdate', function() {
+      const percent = player.currentTime / player.duration * 100;
+      progressBar.style.width = percent + '%';
+      const format = t => String(Math.floor(t / 60)).padStart(2, '0') + ':' + String(Math.floor(t % 60)).padStart(2, '0');
+      timeDisplay.textContent = `${format(player.currentTime)} / ${format(player.duration)}`;
+    });
+    progress.addEventListener('click', function(e) {
+      const rect = progress.getBoundingClientRect();
+      const pos = (e.pageX - rect.left) / rect.width;
+      player.currentTime = pos * player.duration;
+    });
+    volumeSlider.addEventListener('input', function() {
+      player.volume = volumeSlider.value;
+    });
+    fsBtn.addEventListener('click', function() {
+      if (!document.fullscreenElement) {
+        player.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    });
+    closeVideoModal.addEventListener('click', function(e) {
+      e.preventDefault();
+      player.pause();
+      videoModal.style.display = 'none';
+    });
+    window.addEventListener('click', function(e) {
+      if (e.target === donateModal || e.target === videoModal) {
+        player.pause();
+        donateModal.style.display = 'none';
+        videoModal.style.display = 'none';
+      }
+    });
+    window.addEventListener('load', function() {
       document.querySelector('.canvas').style.opacity = '1';
     });
   </script>
