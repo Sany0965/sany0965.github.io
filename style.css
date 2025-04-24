@@ -37,7 +37,7 @@ body {
 }
 @keyframes fadeInSimple {
   from { opacity: 0; }
-  to { opacity: 1; }
+  to   { opacity: 1; }
 }
 .avatar-container {
   padding: 10px;
@@ -140,7 +140,7 @@ body {
   padding: 12px 25px;
   border: 1px solid rgba(0, 255, 0, 0.4);
   border-radius: 30px;
-  background: rgba(0, 20, 0, 0.2);
+  background: rgba(0, 20px, 0, 0.2);
 }
 .link-item a:hover {
   background: rgba(0, 255, 0, 0.15);
@@ -152,6 +152,8 @@ body {
   min-width: 30px;
 }
 .creator-info {
+  position: relative;
+  z-index: 2;
   color: var(--matrix-green);
   font-size: 1em;
   margin-top: 20px;
@@ -161,49 +163,49 @@ body {
   animation-delay: 0.5s;
 }
 @keyframes glow {
-  0% { box-shadow: 0 0 10px var(--matrix-green); }
-  50% { box-shadow: 0 0 30px var(--matrix-green); }
+  0%   { box-shadow: 0 0 10px var(--matrix-green); }
+  50%  { box-shadow: 0 0 30px var(--matrix-green); }
   100% { box-shadow: 0 0 10px var(--matrix-green); }
 }
 @keyframes matrixEffect {
-  0% { background-position: 0% 0%; }
+  0%   { background-position: 0% 0%; }
   100% { background-position: 0% 100%; }
 }
 @media (max-width: 768px) {
   .matrix-container { padding: 20px; width: 90%; }
-  .matrix-avatar { width: 140px; height: 140px; }
-  .matrix-text { font-size: 1.8em; letter-spacing: 2px; }
+  .matrix-avatar   { width: 140px; height: 140px; }
+  .matrix-text     { font-size: 1.8em; letter-spacing: 2px; }
   .emoji-separator { font-size: 1.3em; margin: 15px 0; }
-  .link-item a { padding: 10px 20px; font-size: 0.9em; }
-  .projects-title { font-size: 1.5em; }
-  .project-item { font-size: 1em; }
+  .link-item a     { padding: 10px 20px; font-size: 0.9em; }
+  .projects-title  { font-size: 1.5em; }
+  .project-item    { font-size: 1em; }
 }
 @media (min-width: 1200px) {
   .matrix-container { padding: 50px; }
-  .matrix-avatar { width: 220px; height: 220px; }
-  .matrix-text { font-size: 2.5em; }
-  .link-item a { padding: 15px 30px; font-size: 1.1em; }
+  .matrix-avatar   { width: 220px; height: 220px; }
+  .matrix-text     { font-size: 2.5em; }
+  .link-item a     { padding: 15px 30px; font-size: 1.1em; }
 }
 @media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
   .matrix-container,
   .projects-container,
-  .links-container { opacity: 1; }
+  .links-container {
+    opacity: 1;
+  }
 }
 .canvas {
   position: relative;
-  z-index: 0;
+  z-index: -1;
   height: 300px;
-  margin: -30px auto 0;
+  margin: 30px auto 0;
   opacity: 0;
   transition: opacity 1s ease;
 }
-.tree {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
+.tree,
 .trunk,
 .branch {
   border-radius: 25px;
@@ -222,14 +224,14 @@ body {
   transform-origin: bottom center;
 }
 .branch:nth-child(even) { transform: rotate(55deg); }
-.branch:nth-child(odd) { transform: rotate(-55deg); }
+.branch:nth-child(odd)  { transform: rotate(-55deg); }
 .branch:nth-child(1) { top: 100px; height: 120px; }
-.branch:nth-child(2) { top: 80px; height: 110px; }
-.branch:nth-child(3) { top: 60px; height: 90px; }
-.branch:nth-child(4) { top: 40px; height: 80px; }
-.branch:nth-child(5) { top: 30px; height: 60px; }
-.branch:nth-child(6) { top: 15px; height: 50px; }
-.branch:nth-child(7) { top: 5px; height: 30px; }
+.branch:nth-child(2) { top: 80px;  height: 110px; }
+.branch:nth-child(3) { top: 60px;  height: 90px;  }
+.branch:nth-child(4) { top: 40px;  height: 80px;  }
+.branch:nth-child(5) { top: 30px;  height: 60px;  }
+.branch:nth-child(6) { top: 15px;  height: 50px;  }
+.branch:nth-child(7) { top: 5px;   height: 30px;  }
 .leaf {
   position: absolute;
   width: 15px;
@@ -240,11 +242,11 @@ body {
   animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 @keyframes leaf-odd-grow {
-  0% { transform: scale(0); opacity: 0; }
+  0%   { transform: scale(0); opacity: 0; }
   100% { transform: scale(1); opacity: 0.8; }
 }
 @keyframes leaf-even-grow {
-  0% { transform: rotate(-90deg) scale(0); opacity: 0; }
+  0%   { transform: rotate(-90deg) scale(0); opacity: 0; }
   100% { transform: rotate(-90deg) scale(1); opacity: 0.8; }
 }
 .leaf:nth-child(odd) {
@@ -257,12 +259,12 @@ body {
   transform-origin: 50% 100%;
   animation: leaf-even-grow 4s both;
 }
-.leaf:nth-child(1) { top: 3px; animation-delay: 0.5s; }
-.leaf:nth-child(2) { top: 15px; animation-delay: 1s; }
+.leaf:nth-child(1) { top: 3px;  animation-delay: 0.5s; }
+.leaf:nth-child(2) { top: 15px; animation-delay: 1s;   }
 .leaf:nth-child(3) { top: 35px; animation-delay: 1.5s; }
-.leaf:nth-child(4) { top: 45px; animation-delay: 2s; }
+.leaf:nth-child(4) { top: 45px; animation-delay: 2s;   }
 .leaf:nth-child(5) { top: 65px; animation-delay: 2.5s; }
-.leaf:nth-child(6) { top: 75px; animation-delay: 3s; }
+.leaf:nth-child(6) { top: 75px; animation-delay: 3s;   }
 .leaf:nth-child(7) { top: 95px; animation-delay: 3.5s; }
 .backrooms-link {
   cursor: pointer;
@@ -299,6 +301,22 @@ body {
   display: block;
   outline: none;
 }
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid var(--matrix-green);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 2;
+}
+@keyframes spin {
+  to { transform: rotate(360deg) translate(-50%, -50%); }
+}
 .custom-controls {
   position: absolute;
   bottom: 15px;
@@ -330,7 +348,7 @@ body {
   cursor: pointer;
   position: relative;
 }
-.custom-controls .progress .bar {
+.custom-controls .bar {
   height: 100%;
   width: 0%;
   background: var(--matrix-green);
