@@ -363,3 +363,50 @@ body {
 .custom-controls .volume {
   width: 80px;
 }
+
+
+/* Стили для модального окна пожертвований */
+#donateModal .modal {
+  background: rgba(0, 0, 0, 0.9); /* Тёмный фон с небольшой прозрачностью */
+  border: 2px solid var(--matrix-green); /* Зелёная рамка */
+  border-radius: 10px; /* Скруглённые углы */
+  padding: 20px; /* Внутренние отступы */
+  max-width: 400px; /* Ограничение ширины */
+  width: 90%; /* Адаптивность для маленьких экранов */
+  text-align: center; /* Центрирование текста */
+}
+
+#donateModal .modal h2 {
+  color: var(--matrix-green); /* Зелёный цвет */
+  text-shadow: 0 0 10px var(--matrix-green); /* Эффект свечения */
+  margin-bottom: 20px; /* Отступ снизу */
+}
+
+#donateModal .modal-buttons a {
+  display: inline-block; /* Для корректного отображения как кнопок */
+  margin: 10px; /* Отступы между кнопками */
+  padding: 10px 20px; /* Внутренние отступы */
+  background: rgba(0, 255, 0, 0.1); /* Лёгкий зелёный фон */
+  border: 1px solid var(--matrix-green); /* Зелёная рамка */
+  border-radius: 5px; /* Скруглённые углы */
+  color: var(--matrix-green); /* Зелёный текст */
+  text-decoration: none; /* Убираем подчёркивание */
+  transition: var(--transition); /* Плавные переходы */
+}
+
+#donateModal .modal-buttons a:hover {
+  background: rgba(0, 255, 0, 0.2); /* Более яркий фон при наведении */
+  box-shadow: 0 0 15px var(--matrix-green); /* Свечение при наведении */
+}
+
+#donateModal .close-modal {
+  display: block; /* Отдельная строка */
+  margin-top: 20px; /* Отступ сверху */
+  color: var(--matrix-green); /* Зелёный цвет */
+  text-decoration: none; /* Убираем подчёркивание */
+  transition: var(--transition); /* Плавные переходы */
+}
+
+#donateModal .close-modal:hover {
+  text-shadow: 0 0 10px var(--matrix-green); /* Свечение при наведении */
+}
