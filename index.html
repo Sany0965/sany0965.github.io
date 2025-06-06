@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Worpli ・ Information</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-elements">
+    <div class="bg-blob-1"></div>
+    <div class="bg-blob-2"></div>
+    <div class="bg-blob-3"></div>
+    <div class="bg-grid-pattern"></div>
+  </div>
+
+  <div class="container">
+    <header class="profile-header">
+      <div class="avatar-container">
+        <div class="avatar-glow"></div>
+        <div class="avatar">
+          <img src="logo.png" alt="Penguin logo">
+        </div>
+      </div>
+
+      <div class="profile-info">
+        <h1 class="profile-name"><span id="typewriter" class="typewriter-cursor"></span></h1>
+
+        <div class="status-container">
+          <div class="status-badge">
+            <span id="status-indicator" class="status-indicator status-offline"></span>
+            <span id="status-text" class="status-text">Оффлайн</span>
+          </div>
+
+          <div id="game-activity" class="status-badge" style="display: none;">
+            <svg class="game-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="6" y="11" width="12" height="8" rx="1"></rect>
+              <rect x="10" y="17" width="4" height="2" rx="1"></rect>
+              <path d="M12 17v-6"></path>
+              <path d="M8 8V7a4 4 0 0 1 8 0v1"></path>
+              <path d="M16 11h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"></path>
+              <path d="M8 11H6a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"></path>
+            </svg>
+            <span id="game-name" class="status-text">Играет в игру</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="cards-grid">
+      <div class="card no-animation">
+        <div class="card-header">
+          <div class="card-icon-container">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <h2 class="card-title">Основное</h2>
+        </div>
+        <div class="card-content">
+          <ul class="list">
+            <li class="list-item">
+              <span class="list-bullet">•</span> Возраст: 19
+            </li>
+            <li class="list-item">
+              <span class="list-bullet">•</span> Родился в: России
+            </li>
+            <li class="list-item">
+              <span class="list-bullet">•</span> Живу в: Санкт-Петербурге
+            </li>
+            <li class="list-item">
+              <span class="list-bullet">•</span> Время: (GMT+3)
+            </li>
+            <li class="list-item">
+              <span class="list-bullet">•</span> Языки: Русский, Английский
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon-container">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+            </svg>
+          </div>
+          <h2 class="card-title">Контакты</h2>
+        </div>
+        <div class="card-content">
+          <ul class="list">
+            <li class="list-item">
+              <span class="list-bullet">•</span> Telegram:
+              <a href="https://t.me/worpli" target="_blank" rel="noopener noreferrer" class="link">
+                Worpli Splash
+                <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </li>
+            <li class="list-item">
+              <span class="list-bullet">•</span> Telegram
+              <a href="https://t.me/worpliDev" target="_blank" rel="noopener noreferrer" class="link">
+                Worpli Dev
+                <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon-container">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <h2 class="card-title">Навыки</h2>
+        </div>
+        <div class="card-content">
+          <div class="badges-container">
+            <span class="badge">Java</span>
+            <span class="badge">HTML</span>
+            <span class="badge">CSS</span>
+            <span class="badge">Python</span>
+            <span class="badge">JS</span>
+          </div>
+          <p class="text-sm text-gray-400">
+            <span id="skills-text"></span><span id="skills-dots"></span>
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon-container">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <h2 class="card-title">Проекты</h2>
+        </div>
+        <div class="card-content">
+          <ul class="list">
+            <li class="list-item">
+              <span class="list-bullet">•</span> TG_DUMP-Python:
+              <a href="https://github.com/Sany0965/TG_DumpPython" target="_blank" rel="noopener noreferrer" class="link">
+                Github
+                <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </li>
+            <li class="list-item">
+              <span class="list-bullet">•</span> AutoSaleBot
+              <a href="https://github.com/Sany0965/AutoSaleBot" target="_blank" rel="noopener noreferrer" class="link">
+                Github
+                <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon-container">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <h2 class="card-title">О себе</h2>
+        </div>
+        <div class="card-content">
+          <p class="text-gray-300 mb-6">
+            Всегда занят всякой фигней
+          </p>
+
+          <blockquote class="quote">
+            <p class="quote-text">
+              "😘😘😡"
+            </p>
+            <footer class="quote-author">— Worpli</footer>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon-container">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          <h2 class="card-title">Частота использования языка</h2>
+        </div>
+        <div class="card-content">
+          <div class="progress-container">
+            <div class="progress-header">
+              <span class="text-sm text-gray-400">Python</span>
+              <span class="text-sm text-gray-400">80%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="java-progress"></div>
+            </div>
+          </div>
+
+          <div class="progress-container">
+            <div class="progress-header">
+              <span class="text-sm text-gray-400">HTML</span>
+              <span class="text-sm text-gray-400">15%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="python-progress"></div>
+            </div>
+          </div>
+
+          <div class="progress-container">
+            <div class="progress-header">
+              <span class="text-sm text-gray-400">CSS</span>
+              <span class="text-sm text-gray-400">5%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="js-progress"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+<div class="card">
+  <div class="card-header">
+    <div class="card-icon-container">
+      <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 18l6-6-6-6"></path>
+        <path d="M8 6l-6 6 6 6"></path>
+      </svg>
+    </div>
+    <h2 class="card-title">Исходный код</h2>
+  </div>
+  <div class="card-content">
+    <p class="text-gray-300 mb-4">
+      Данный сайт я взял под основу своего био, вот отсюда:
+    </p>
+    <ul class="list">
+      <li class="list-item">
+        <span class="list-bullet">•</span> Telegram:
+        <a href="https://t.me/logovo_penguina" target="_blank" rel="noopener noreferrer" class="link">
+          @logovo_penguina
+        </a>
+      </li>
+      <li class="list-item">
+        <span class="list-bullet">•</span> Сайт:
+        <a href="http://pepegin.ru" target="_blank" rel="noopener noreferrer" class="link">
+          pepegin.ru
+        </a>
+      </li>
+    </ul>
+    <p class="text-gray-300">Спасибо, Пингвин ❤️</p>
+  </div>
+</div>
+</div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
