@@ -2,11 +2,11 @@
 const typewriterElement = document.getElementById('typewriter');
 const primaryText = 'Worpli SPLASH';
 const secondaryText = '- Worpli Dev';
-const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
+const characters = 'хуй';
 const maxIterations = 8;
 const charDelay = 50;
 const letterDelay = 200;
-const secondaryCharDelay = 150;
+const secondaryCharDelay = 10;
 
 function getRandomCharacter() {
   return characters[Math.floor(Math.random() * characters.length)];
@@ -50,14 +50,36 @@ const dotDelay = 500;
 
 skillsTextElement.textContent = skillsText;
 
-async function animateDots() {
-  while (true) {
-    for (let i = 0; i <= 3; i++) {
-      skillsDotsElement.textContent = '.'.repeat(i);
-      await new Promise(resolve => setTimeout(resolve, dotDelay));
-    }
-  }
+// Заменяем функцию animateDots
+function animateDots() {
+  let i = 0;
+  const updateDots = () => {
+    skillsDotsElement.textContent = '.'.repeat(i);
+    i = (i + 1) % 4;
+    setTimeout(updateDots, dotDelay);
+  };
+  updateDots();
 }
+
+// Добавляем обработчик загрузки
+document.addEventListener('DOMContentLoaded', () => {
+  // Запускаем анимации с небольшими задержками
+  setTimeout(typewriterEffect, 300);
+  setTimeout(animateDots, 600);
+  
+  // Анимация прогресс-баров
+  setTimeout(() => {
+    document.getElementById('java-progress').style.width = '80%';
+    setTimeout(() => {
+      document.getElementById('python-progress').style.width = '15%';
+      setTimeout(() => {
+        document.getElementById('js-progress').style.width = '5%';
+      }, 400);
+    }, 200);
+  }, 800);
+  
+  updateDiscordStatus('online');
+});
 
 // Progress Bar Animation
 setTimeout(() => {

@@ -778,3 +778,57 @@ body {
 .card:nth-child(4) { animation-delay: 0.5s; }
 .card:nth-child(5) { animation-delay: 0.6s; }
 .card:nth-child(6) { animation-delay: 0.7s; }
+
+/* Оптимизация для мобильных устройств */
+@media (max-width: 768px) {
+  /* Аппаратное ускорение для проблемных элементов */
+  .card,
+  .avatar-container,
+  .status-badge,
+  .progress-fill {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  
+  /* Упрощение анимаций */
+  .bg-blob-1,
+  .bg-blob-2,
+  .bg-blob-3 {
+    animation: none;
+    opacity: 0.1;
+  }
+  
+  /* Увеличение времени анимации */
+  .progress-fill {
+    transition: width 2s ease;
+  }
+  
+  /* Отключение сложных hover-эффектов */
+  .card:hover,
+  .profile-header:hover,
+  .avatar-container:hover,
+  .status-badge:hover,
+  .list-item:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+  }
+}
+
+/* Исправление для Safari */
+@supports (-webkit-touch-callout: none) {
+  .card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .typewriter-cursor::after {
+    animation: none;
+    opacity: 1;
+  }
+  
+  .status-online {
+    animation: none;
+  }
+}
