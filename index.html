@@ -2,157 +2,484 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Worpli's Bio</title>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="description"
+    content="Персональная страница Worpli — информация, контакты и проекты"
+  >
+
+  <meta name="theme-color" content="#020403">
+
+  <title>Worpli — Bio</title>
+
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  >
 </head>
+
 <body>
-  <div class="bg-elements">
+  <!-- Декоративный фон -->
+  <div class="bg-elements" aria-hidden="true">
     <div class="bg-blob-1"></div>
     <div class="bg-blob-2"></div>
     <div class="bg-blob-3"></div>
     <div class="bg-grid-pattern"></div>
   </div>
 
-  <div class="container">
+  <main class="container">
+    <!-- Профиль -->
     <header class="profile-header">
       <div class="avatar-container">
         <div class="avatar-glow"></div>
+
         <div class="avatar">
-          <img src="logo.png" alt="Avatar">
+          <img
+            src="logo.png"
+            alt="Аватар Worpli"
+            width="128"
+            height="128"
+          >
         </div>
       </div>
+
       <div class="profile-info">
-        <h1 class="profile-name" id="typewriter">Worpli SPLASH</h1>
+        <h1 class="profile-name" id="typewriter">
+          worprli
+        </h1>
+
+        <p class="profile-description">
+          Разработчик Telegram-ботов, сайтов и полезных инструментов.(БУРМАЛДА)
+        </p>
+
         <div class="status-container">
           <div class="status-badge">
-            <div class="status-indicator" id="status-indicator"></div>
-            <span class="status-text" id="status-text">Онлайн</span>
+            <span
+              class="status-indicator status-online"
+              id="status-indicator"
+              aria-hidden="true"
+            ></span>
+
+            <span class="status-text" id="status-text">
+              Онлайн
+            </span>
           </div>
         </div>
       </div>
     </header>
 
-    <div class="cards-grid">
-      <div class="card">
+    <!-- Карточки -->
+    <section
+      class="cards-grid"
+      aria-label="Информация о пользователе"
+    >
+      <!-- Основная информация -->
+      <article class="card">
         <div class="card-header">
-          <div class="card-icon-container">
+          <div
+            class="card-icon-container"
+            aria-hidden="true"
+          >
             <i class="fas fa-user card-icon"></i>
           </div>
+
           <h2 class="card-title">Основное</h2>
         </div>
+
         <div class="card-content">
           <ul class="list">
-            <li class="list-item"><span class="list-bullet">•</span> Возраст: 19</li>
-            <li class="list-item"><span class="list-bullet">•</span> Родился в: России</li>
-            <li class="list-item"><span class="list-bullet">•</span> Живу в: Санкт-Петербурге</li>
-            <li class="list-item"><span class="list-bullet">•</span> Время: (GMT+3)</li>
-            <li class="list-item"><span class="list-bullet">•</span> Языки: Русский, Английский</li>
+            <li class="list-item">
+              <span
+                class="list-bullet"
+                aria-hidden="true"
+              >
+                •
+              </span>
+
+              <span>Возраст: 20</span>
+            </li>
+
+            <li class="list-item">
+              <span
+                class="list-bullet"
+                aria-hidden="true"
+              >
+                •
+              </span>
+
+              <span>Родился в: России</span>
+            </li>
+
+            <li class="list-item">
+              <span
+                class="list-bullet"
+                aria-hidden="true"
+              >
+                •
+              </span>
+
+              <span>Живу в: Санкт-Петербурге</span>
+            </li>
+
+            <li class="list-item">
+              <span
+                class="list-bullet"
+                aria-hidden="true"
+              >
+                •
+              </span>
+
+              <span>Часовой пояс: GMT+3</span>
+            </li>
+
+            <li class="list-item">
+              <span
+                class="list-bullet"
+                aria-hidden="true"
+              >
+                •
+              </span>
+
+              <span>Языки: Русский, Английский</span>
+            </li>
           </ul>
         </div>
-      </div>
+      </article>
 
-      <div class="card">
+      <!-- Контакты -->
+      <article class="card">
         <div class="card-header">
-          <div class="card-icon-container">
+          <div
+            class="card-icon-container"
+            aria-hidden="true"
+          >
             <i class="fas fa-address-book card-icon"></i>
           </div>
+
           <h2 class="card-title">Контакты</h2>
         </div>
+
         <div class="card-content">
           <ul class="list">
             <li class="list-item">
-              <span class="list-bullet">•</span>
-              <a href="https://t.me/Worpli" class="link">Telegram: Worpli Splash <i class="fas fa-external-link-alt link-icon"></i></a>
-            </li>
-            <li class="list-item">
-              <span class="list-bullet">•</span>
-              <a href="https://t.me/WorpliDev" class="link">Telegram: Worpli Dev <i class="fas fa-external-link-alt link-icon"></i></a>
+              <span
+                class="list-bullet"
+                aria-hidden="true"
+              >
+                •
+              </span>
+
+              <a
+                href="https://t.me/Worpli"
+                class="link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Telegram: Worpli Splash
+
+                <i
+                  class="fas fa-external-link-alt link-icon"
+                  aria-hidden="true"
+                ></i>
+              </a>
             </li>
           </ul>
         </div>
-      </div>
+      </article>
 
-      <div class="card">
+      <!-- Проекты -->
+      <article class="card">
         <div class="card-header">
-          <div class="card-icon-container">
+          <div
+            class="card-icon-container"
+            aria-hidden="true"
+          >
             <i class="fas fa-project-diagram card-icon"></i>
           </div>
+
           <h2 class="card-title">Проекты</h2>
         </div>
+
         <div class="card-content">
           <ul class="list">
             <li class="list-item">
-              <span class="list-bullet">•</span>
-              <a href="https://github.com/Sany0965/TG_DumpPython" class="link">TG_DUMP-Python: Github <i class="fas fa-external-link-alt link-icon"></i></a>
+              <span
+                class="list-bullet"
+                aria-hidden="true"
+              >
+                •
+              </span>
+
+              <a
+                href="https://github.com/Sany0965/TG_DumpPython"
+                class="link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                TG_DUMP-Python: GitHub
+
+                <i
+                  class="fas fa-external-link-alt link-icon"
+                  aria-hidden="true"
+                ></i>
+              </a>
             </li>
+
             <li class="list-item">
-              <span class="list-bullet">•</span>
-              <a href="https://github.com/Sany0965/AutoSaleBot" class="link">AutoSaleBot: Github <i class="fas fa-external-link-alt link-icon"></i></a>
+              <span
+                class="list-bullet"
+                aria-hidden="true"
+              >
+                •
+              </span>
+
+              <a
+                href="https://github.com/Sany0965/AutoSaleBot"
+                class="link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                AutoSaleBot: GitHub
+
+                <i
+                  class="fas fa-external-link-alt link-icon"
+                  aria-hidden="true"
+                ></i>
+              </a>
             </li>
+
             <li class="list-item">
-              <span class="list-bullet">•</span>
-              <a href="https://t.me/tictokphotourlBot" class="link">TikTok Photo Prank: Telegram <i class="fas fa-external-link-alt link-icon"></i></a>
-            </li>
-            <li class="list-item">
-              <span class="list-bullet">•</span>
-              <a href="https://worpli.ru/WRPL-Chat.github.io/" class="link">WRPL CHAT AI: Site <i class="fas fa-external-link-alt link-icon"></i></a>
+              <span
+                class="list-bullet"
+                aria-hidden="true"
+              >
+                •
+              </span>
+
+              <a
+                href="https://t.me/tictokphotourlBot"
+                class="link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                TikTok Photo Prank: Telegram
+
+                <i
+                  class="fas fa-external-link-alt link-icon"
+                  aria-hidden="true"
+                ></i>
+              </a>
             </li>
           </ul>
         </div>
-      </div>
+      </article>
 
-      <div class="card">
+      <!-- Друзья -->
+      <article class="card">
         <div class="card-header">
-          <div class="card-icon-container">
+          <div
+            class="card-icon-container"
+            aria-hidden="true"
+          >
             <i class="fas fa-users card-icon"></i>
           </div>
-          <h2 class="card-title">Друзяшки❤️</h2>
+
+          <h2 class="card-title">Друзяшки ❤️</h2>
         </div>
+
         <div class="card-content">
           <ul class="list">
             <li class="list-item">
-              <span class="list-bullet">•</span>
-              <a href="https://t.me/p2ngu1h" class="link">Пингвин <i class="fas fa-external-link-alt link-icon"></i></a>
+              <span
+                class="list-bullet"
+                aria-hidden="true"
+              >
+                •
+              </span>
+
+              <a
+                href="https://t.me/p2ngu1h"
+                class="link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Пингвин
+
+                <i
+                  class="fas fa-external-link-alt link-icon"
+                  aria-hidden="true"
+                ></i>
+              </a>
             </li>
+
             <li class="list-item">
-              <span class="list-bullet">•</span>
-              Дефчонка
+              <span
+                class="list-bullet"
+                aria-hidden="true"
+              >
+                •
+              </span>
+
+              <span>Дефчонка</span>
             </li>
+
             <li class="list-item">
-              <span class="list-bullet">•</span>
-              <a href="https://t.me/WENYYXUS" class="link">zDEBRY ₄₂ <i class="fas fa-external-link-alt link-icon"></i></a>
+              <span
+                class="list-bullet"
+                aria-hidden="true"
+              >
+                •
+              </span>
+
+              <a
+                href="https://t.me/WENYYXUS"
+                class="link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                zDEBRY ₄₂
+
+                <i
+                  class="fas fa-external-link-alt link-icon"
+                  aria-hidden="true"
+                ></i>
+              </a>
             </li>
+
             <li class="list-item">
-              <span class="list-bullet">•</span>
-              <a href="https://t.me/Tapokdurachek" class="link">Тапок <i class="fas fa-external-link-alt link-icon"></i></a>
+              <span
+                class="list-bullet"
+                aria-hidden="true"
+              >
+                •
+              </span>
+
+              <a
+                href="https://t.me/Tapokdurachek"
+                class="link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Тапок
+
+                <i
+                  class="fas fa-external-link-alt link-icon"
+                  aria-hidden="true"
+                ></i>
+              </a>
             </li>
+
             <li class="list-item">
-              <span class="list-bullet">•</span>
-              <a href="https://t.me/eleksius" class="link">Alexey <i class="fas fa-external-link-alt link-icon"></i></a>
+              <span
+                class="list-bullet"
+                aria-hidden="true"
+              >
+                •
+              </span>
+
+              <a
+                href="https://t.me/eleksius"
+                class="link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Alexey
+
+                <i
+                  class="fas fa-external-link-alt link-icon"
+                  aria-hidden="true"
+                ></i>
+              </a>
             </li>
+
             <li class="list-item">
-              <span class="list-bullet">•</span>
-              <a href="https://t.me/FuckedWindows" class="link">Максим <i class="fas fa-external-link-alt link-icon"></i></a>
+              <span
+                class="list-bullet"
+                aria-hidden="true"
+              >
+                •
+              </span>
+
+              <a
+                href="https://t.me/FuckedWindows"
+                class="link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Максим
+
+                <i
+                  class="fas fa-external-link-alt link-icon"
+                  aria-hidden="true"
+                ></i>
+              </a>
             </li>
+
             <li class="list-item">
-              <span class="list-bullet">•</span>
-              <a href="https://t.me/hezoky" class="link">Саша <i class="fas fa-external-link-alt link-icon"></i></a>
+              <span
+                class="list-bullet"
+                aria-hidden="true"
+              >
+                •
+              </span>
+
+              <a
+                href="https://t.me/hezoky"
+                class="link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Саша
+
+                <i
+                  class="fas fa-external-link-alt link-icon"
+                  aria-hidden="true"
+                ></i>
+              </a>
             </li>
           </ul>
-          <button id="play-music-btn" class="music-btn">Нажми на меня</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  
-  <audio id="background-music" autoplay>
-    <source src="music.mp3" type="audio/mpeg">
-    Ваш браузер не поддерживает аудиоэлемент.
+          <button
+            id="play-music-btn"
+            class="music-btn"
+            type="button"
+            aria-pressed="false"
+            aria-label="Включить фоновую музыку"
+          >
+            <i
+              class="fas fa-play"
+              aria-hidden="true"
+            ></i>
+
+            <span>Включить музыку</span>
+          </button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Фоновая музыка -->
+  <audio
+    id="background-music"
+    preload="metadata"
+    loop
+  >
+    <source
+      src="music.mp3"
+      type="audio/mpeg"
+    >
+
+    Ваш браузер не поддерживает воспроизведение аудио.
   </audio>
 
   <script src="script.js"></script>
 </body>
 </html>
+
